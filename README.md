@@ -4,5 +4,6 @@ Project iASiS https://project-iasis.eu/ is an EU funded project that seeks to pa
 
 Precision oncology and personalized medicine, on the other hand, rely on the accurate integration and interpretation of genomic data including variants to allow individualized treatment selection, diagnosis, prediction, and prognosis.
 
-Therefore, as part of iASiS project, SDM team work on collecting, processing, and semantify genomic data from open source data bases and integrate them into a KG along with patient sequencing data. 
+Therefore, as part of iASiS project, SDM team work on collecting, processing, and semantify genomic data from open source data bases (e.g. https://cancer.sanger.ac.uk/cosmic, https://civicdb.org/home, and https://www.oncokb.org/ ) and integrate them into a KG along with patient sequencing data. 
+
 
