@@ -10,7 +10,7 @@
 @prefix iasis: <http://project-iasis.eu/vocab/> .
 
 <TM1>
-	rml:logicalSource [ rml:source "/data/histologySubtype1.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_histologySubtype1.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/TissueSubType/{Histology subtype 1}";
@@ -30,7 +30,7 @@
 	].
 
 <TM2>
-	rml:logicalSource [ rml:source "/data/histologySubtype1.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_histologySubtype1.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -57,7 +57,7 @@
 	].
 
 <TM3>
-	rml:logicalSource [ rml:source "/data/primaryHistology.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_primaryHistology.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/TissueType/{Histology}";
@@ -77,7 +77,7 @@
 	].
 
 <TM4>
-	rml:logicalSource [ rml:source "/data/primaryHistology.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_primaryHistology.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -104,7 +104,7 @@
 	].	
 
 <TM5>
-	rml:logicalSource [ rml:source "/data/sample_primaryTissue.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_primaryTissue.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/Tissue/{Primary Tissue}";
@@ -124,7 +124,7 @@
 	].
 
 <TM6>
-	rml:logicalSource [ rml:source "/data/sample_primaryTissue.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_primaryTissue.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -151,7 +151,7 @@
 	].	
 
 <TM7>
-	rml:logicalSource [ rml:source "/data/sample_tissueSubtype1.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_tissueSubtype1.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/SubTissue/{Site subtype 1}";
@@ -171,7 +171,7 @@
 	].
 
 <TM8>
-	rml:logicalSource [ rml:source "/data/sample_tissueSubtype1.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_tissueSubtype1.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -198,7 +198,7 @@
 	].	
 
 <TM9>
-	rml:logicalSource [ rml:source "/data/sample_tissueSubtype2.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_tissueSubtype2.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/SubTissue/{Tissue Subtype 2}";
@@ -218,7 +218,7 @@
 	].
 
 <TM10>
-	rml:logicalSource [ rml:source "/data/sample_tissueSubtype2.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_tissueSubtype2.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -244,7 +244,7 @@
 		]
 	].	
 <TM11>
-	rml:logicalSource [ rml:source "/data/sample_zygosity.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_zygosity.csv";
 						rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/Zygosity/{Zygosity}";
@@ -264,7 +264,7 @@
 	].
 
 <TM12>
-	rml:logicalSource [ rml:source "/data/sample_zygosity.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_zygosity.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

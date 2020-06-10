@@ -10,7 +10,7 @@
 @prefix iasis: <http://project-iasis.eu/vocab/> .
 
 <TM1>
-	rml:logicalSource [ rml:source "/data/cnv.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_cnv.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -31,7 +31,7 @@
 	].
 
 <TM2>
-	rml:logicalSource [ rml:source "/data/cnv.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_cnv.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -82,7 +82,7 @@
 	].
 
 <TM3>
-	rml:logicalSource [ rml:source "/data/cnv.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_cnv.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -97,7 +97,7 @@
 	].
 
 <TM4>
-	rml:logicalSource [ rml:source "/data/cnv.csv";
+	rml:logicalSource [ rml:source "/data/cosmic_cnv.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
