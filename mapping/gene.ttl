@@ -1,0 +1,66 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix base: <http://tib.de/sdm/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix iasis: <http://project-iasis.eu/vocab/> .
+
+<TM1>
+	rml:logicalSource [ rml:source "/data/gene.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Gene/{Gene}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM2>
+		]
+	].
+
+<TM2>
+	rml:logicalSource [ rml:source "/data/gene.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Gene" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+
+<TM3>
+	rml:logicalSource [ rml:source "/data/gene_DBpedia.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Gene/{Gene}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "{DbpediaURL}";
+		]
+	].

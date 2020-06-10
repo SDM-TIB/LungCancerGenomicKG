@@ -1,0 +1,301 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix base: <http://tib.de/sdm/mapping#>
+@prefix iasis: <http://project-iasis.eu/vocab/> .
+
+<TM1>
+	rml:logicalSource [ rml:source "/data/histologySubtype1.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/TissueSubType/{Histology subtype 1}";
+		rr:class iasis:TissueSubType;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:TissueSubTypeLabel;
+		rr:objectMap [
+			rml:reference "Histology subtype 1"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM2>
+		]
+	].
+
+<TM2>
+	rml:logicalSource [ rml:source "/data/histologySubtype1.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Histology subtype 1" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].
+
+<TM3>
+	rml:logicalSource [ rml:source "/data/primaryHistology.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/TissueType/{Histology}";
+		rr:class iasis:TissueType;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:tissueTypeLabel;
+		rr:objectMap [
+			rml:reference "Histology"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM4>
+		]
+	].
+
+<TM4>
+	rml:logicalSource [ rml:source "/data/primaryHistology.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Histology" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+
+<TM5>
+	rml:logicalSource [ rml:source "/data/sample_primaryTissue.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Tissue/{Primary Tissue}";
+		rr:class iasis:Tissue;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:tissueLabel;
+		rr:objectMap [
+			rml:reference "Primary Tissue"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM6>
+		]
+	].
+
+<TM6>
+	rml:logicalSource [ rml:source "/data/sample_primaryTissue.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Primary Tissue" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+
+<TM7>
+	rml:logicalSource [ rml:source "/data/sample_tissueSubtype1.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/SubTissue/{Site subtype 1}";
+		rr:class iasis:SubTissue;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:subTissueLabel;
+		rr:objectMap [
+			rml:reference "Site subtype 1"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM8>
+		]
+	].
+
+<TM8>
+	rml:logicalSource [ rml:source "/data/sample_tissueSubtype1.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Site subtype 1" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+
+<TM9>
+	rml:logicalSource [ rml:source "/data/sample_tissueSubtype2.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/SubTissue/{Tissue Subtype 2}";
+		rr:class iasis:SubTissue;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:subTissueLabel;
+		rr:objectMap [
+			rml:reference "Tissue Subtype 2"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM10>
+		]
+	].
+
+<TM10>
+	rml:logicalSource [ rml:source "/data/sample_tissueSubtype2.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Tissue Subtype 2" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+<TM11>
+	rml:logicalSource [ rml:source "/data/sample_zygosity.csv";
+						rml:referenceFormulation ql:CSV ];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Zygosity/{Zygosity}";
+		rr:class iasis:Zygosity;
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:zygosityLabel;
+		rr:objectMap [
+			rml:reference "Zygosity"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM12>
+		]
+	].
+
+<TM12>
+	rml:logicalSource [ rml:source "/data/sample_zygosity.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annLabel;
+		rr:objectMap [ 
+			rml:reference "Zygosity" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].	
+
+
+
+
+
+
+
+
+
+

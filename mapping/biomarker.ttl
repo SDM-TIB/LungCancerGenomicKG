@@ -1,0 +1,67 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix base: <http://tib.de/sdm/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix iasis: <http://project-iasis.eu/vocab/> .
+
+<TM1>
+	rml:logicalSource [ rml:source "/data/biomarkers.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Biomarker/{biomarker}";
+		rr:class iasis:Biomarker
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:biomarkerLabel;
+		rr:objectMap [ 
+			rml:reference "biomarker" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <TM2>
+		]
+	].
+
+<TM2>
+	rml:logicalSource [ rml:source "/data/biomarkers.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Annotation/{biomarker_CUI}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "biomarker_CUI" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/SourceName/UMLS"
+		]
+	].
+
+<TM3>
+	rml:logicalSource [ rml:source "/data/biomarkers_drugs.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://project-iasis.eu/Biomarker/{biomarker}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:biomarker_has_indication;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/Drug/{drugID}";
+		]
+	].
